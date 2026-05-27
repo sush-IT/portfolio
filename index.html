@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sushant Nanasaheb Khandizod Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --paper: #f7f1e8;
+      --paper-alt: #fcf8f2;
+      --ink: #201913;
+      --muted: #66584d;
+      --accent: #7a4e2d;
+      --rule: #d9c9b8;
+      --card: rgba(255, 255, 255, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background:
+        radial-gradient(circle at top left, rgba(122, 78, 45, 0.08), transparent 30%),
+        linear-gradient(180deg, var(--paper-alt), var(--paper));
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 88px 24px 64px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .masthead {
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.25rem);
+      line-height: 0.98;
+      margin: 0 0 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 42rem;
+    }
+
+    .bio {
+      max-width: 46rem;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.6rem;
+      margin: 0 0 22px;
+      color: var(--ink);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .item {
+      padding: 20px 22px;
+      background: var(--card);
+      border: 1px solid rgba(217, 201, 184, 0.75);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(32, 25, 19, 0.05);
+    }
+
+    .item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .item-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    .item-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .item-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .item-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-top: 10px;
+    }
+
+    .bullets {
+      margin: 14px 0 0;
+      padding-left: 20px;
+      font-family: 'Inter', sans-serif;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(217, 201, 184, 0.85);
+      border-radius: 18px;
+    }
+
+    .project-name {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 10px;
+    }
+
+    .project-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    footer {
+      padding: 34px 0 72px;
+      text-align: center;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 56px;
+      }
+
+      .item-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <section class="masthead">
+      <div class="eyebrow">Classic Portfolio</div>
+      <h1>Sushant Nanasaheb Khandizod</h1>
+      <div class="title">Information Technology Student & Software Developer</div>
+      <p class="bio">Sushant Nanasaheb Khandizod is an analytical and driven Information Technology undergraduate at NDMVP'S KBT College of Engineering. He possesses a strong foundation in software engineering principles, web technologies, and mobile development, focusing on building impactful digital solutions. Sushant combines his technical skills in Java, Python, and database systems with a collaborative mindset to solve complex real-world challenges.</p>
+
+      <div class="contact-bar">
+        <a href="mailto:sushantkhandizod99@gmail.com">Email</a>
+        <a href="https://github.com/sush-IT" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sushant-khandizod-146598326/" target="_blank" rel="noreferrer">LinkedIn</a>
+        
+      </div>
+    </section>
+
+    
+      <section class="section">
+        <h2 class="section-title">Selected Skills</h2>
+        <div class="skills">
+          <span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">DBMS</span><span class="chip">Git</span><span class="chip">VS Code</span><span class="chip">Android Studio</span><span class="chip">Data Structures</span><span class="chip">Operating Systems</span><span class="chip">Flutter</span>
+        </div>
+      </section>
+    
+
+    
+
+    
+      <section class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          
+            <article class="project-card">
+              <h3 class="project-name">Neuro Tech</h3>
+              <p class="project-desc">Developed a comprehensive, web-based mental health support platform designed to foster emotional well-being and provide accessible professional guidance. Features an interactive daily mood tracker, secure support chat interfaces, and resource curation databases.</p>
+              
+                <div class="project-tech">
+                  <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+                </div>
+              
+            </article>
+          
+            <article class="project-card">
+              <h3 class="project-name">GramApp</h3>
+              <p class="project-desc">Architected a mobile transit application tailored for the Kumbhamela festival, facilitating efficient travel planning and route management for pilgrims traveling from villages to Shahi Shan.</p>
+              
+                <div class="project-tech">
+                  <span class="chip">Python</span><span class="chip">Java</span><span class="chip">Flutter</span><span class="chip">Android Studio</span>
+                </div>
+              
+            </article>
+          
+        </div>
+      </section>
+    
+
+    
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="list">
+          
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3 class="item-title">B.Tech – Information Technology</h3>
+                  <div class="item-sub">NDMVP'S KBT College of Engineering, Nashik</div>
+                </div>
+                <div class="item-date">Expected Graduation: 2028</div>
+              </div>
+              <div class="item-desc">Relevant coursework in Data Structures, Database Management Systems, and Operating Systems.</div>
+            </article>
+          
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3 class="item-title">Higher Secondary (12th)</h3>
+                  <div class="item-sub">Dhanlaxmi Jr college</div>
+                </div>
+                <div class="item-date">Completed</div>
+              </div>
+              <div class="item-desc">Percentage: 72%</div>
+            </article>
+          
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3 class="item-title">Secondary (10th)</h3>
+                  <div class="item-sub">Dhanlaxmi Secondary high school</div>
+                </div>
+                <div class="item-date">Completed</div>
+              </div>
+              <div class="item-desc">Percentage: 78.8%</div>
+            </article>
+          
+        </div>
+      </section>
+    
+
+    
+      <section class="section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="skills">
+          <span class="chip">SIH Hackathon Shortlisted Team</span><span class="chip">HTML Training – IIT Bombay (Spoken Tutorial)</span><span class="chip">Universal AI University Hackathon Participant</span><span class="chip">Elite Hackathon Participant</span>
+        </div>
+      </section>
+    
+
+    
+      <section class="section">
+        <h2 class="section-title">Languages</h2>
+        <div class="skills">
+          <span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Marathi</span>
+        </div>
+      </section>
+    
+  </main>
+  <footer>Classic serif portfolio composition for Sushant Nanasaheb Khandizod.</footer>
+</body>
+</html>
